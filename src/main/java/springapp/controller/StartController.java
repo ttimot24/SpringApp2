@@ -1,29 +1,23 @@
 package springapp.controller;
 
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-import springapp.entity.Branch;
-import springapp.hibernate.dao.BranchHBDao;
-import springapp.jpa.dao.BranchJPADao;
 
-@RestController
+import java.util.Map;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
 public class StartController {
     
+    @Transactional
     @RequestMapping({"/","/index"})
-    public ModelAndView index() {
-
-     ModelAndView mav = new ModelAndView();
-
-     mav.setViewName("index");
-     String str = "Hello World!";
-
-     mav.addObject("message", str);
-
-     return mav;
+    public String index(Map<String, Object> model) {
+        
+        model.put("message", "Hellllloooooooo");
+        //model.addAttribute("message", "Hellllloooooooo");
+         
+      return "index";
     }
     
     @RequestMapping("/shutdown")
@@ -35,10 +29,6 @@ public class StartController {
     public String _404() {     
         return "404 - Not found";
     }*/
-  
-    
-  @Autowired
-  private BranchHBDao branchDao;  
-  
+ 
   
 }

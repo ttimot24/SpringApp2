@@ -39,11 +39,11 @@ public class BranchHBDao {
   
   @SuppressWarnings("unchecked")
   public List getAll() {
-    return getSession().createQuery("FROM sttm_branch").list();
+    return getSession().createQuery("FROM Branch").list();
   }
 
 
-  public Branch getById(long id) {
+  public Branch getById(int id) {
     return (Branch) getSession().load(Branch.class, id);
   }
 

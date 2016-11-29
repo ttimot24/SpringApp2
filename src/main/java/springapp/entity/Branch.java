@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import org.springframework.transaction.annotation.Transactional;
 
 
 
@@ -20,12 +21,13 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "sttm_branch")
+@Transactional
 public class Branch {
 
   // The entity fields (private)  
   
   @Id
-  private long branch_code;
+  private int branch_code;
   
   @NotNull
   private String branch_name;
@@ -34,7 +36,7 @@ public class Branch {
     public Branch() {
     }
   
-     public Branch(long branch_code, String branch_name) {
+     public Branch(int branch_code, String branch_name) {
         this.branch_code = branch_code;
         this.branch_name = branch_name;
     }
@@ -43,7 +45,7 @@ public class Branch {
         return branch_code;
     }
 
-    public void setBranchCode(long branch_code) {
+    public void setBranchCode(int branch_code) {
         this.branch_code = branch_code;
     }
 
