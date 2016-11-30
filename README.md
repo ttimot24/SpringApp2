@@ -4,7 +4,7 @@ Configured Spring WebMvc Application.
 
 ###Components
 
-	- SpringBoot
-	- WebMVC
-	- Hibernate
-	- JSP
+- SpringBoot
+- WebMVC
+- Hibernate
+- JSP
