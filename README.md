@@ -8,3 +8,8 @@ Configured Spring WebMvc Application.
 - WebMVC
 - Hibernate
 - JSP
+
+
+###Configuration
+Add your database credentials in `src/main/resources/application.properties` file.
+

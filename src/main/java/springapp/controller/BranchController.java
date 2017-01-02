@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package springapp.controller;
 
 import java.util.List;
@@ -12,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import springapp.entity.Branch;
 import springapp.hibernate.dao.BranchHBDao;
 
@@ -26,15 +19,15 @@ import springapp.hibernate.dao.BranchHBDao;
 public class BranchController {
     
     @RequestMapping({"","/"})
-    public String index() {
+    public String index(ModelMap model) {
         
      List<Branch> all = branchDao.getAll();
-     
-     for(Branch each : all){
-         System.out.println(all);
-     }
 
-     return "asdasd";
+     model.addAttribute("list",all);
+     
+     all.get(0).getBranchCode();
+
+     return "branches";
     }
     
     @RequestMapping("/view")
@@ -42,12 +35,12 @@ public class BranchController {
         
         ModelMap model = new ModelMap();
         
-         model.addAttribute("branch", branchDao.getById(id));
+         model.addAttribute("message", branchDao.getById(id).toString());
 
-     return "index";
+     return "branches";
     }
     
         
   @Autowired
-  private BranchHBDao branchDao;  
+  private BranchHBDao branchDao;
 }

@@ -1,7 +1,5 @@
 package springapp.controller;
 
-
-import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -12,10 +10,9 @@ public class StartController {
     
     @Transactional
     @RequestMapping({"/","/index"})
-    public String index(Map<String, Object> model) {
+    public String index(ModelMap model) {
         
-        model.put("message", "Hellllloooooooo");
-        //model.addAttribute("message", "Hellllloooooooo");
+        model.put("message", "This is a start up message!");
          
       return "index";
     }
@@ -24,11 +21,6 @@ public class StartController {
     public void shutdown() {
         System.exit(0);
     }
-    
-   /* @RequestMapping
-    public String _404() {     
-        return "404 - Not found";
-    }*/
- 
+     
   
 }
