@@ -115,6 +115,11 @@
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>
     </dependency>
+  <!--  <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+        <version>4.0.3</version>
+    </dependency>-->
    <!-- <dependency>
         <groupId>com.vaadin</groupId>
         <artifactId>vaadin-spring-boot-starter</artifactId>
@@ -140,6 +145,10 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <skipTests>true</skipTests>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -148,6 +157,24 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.0.3</version>
+                    <configuration>
+                      <user>myUser</user>
+                      <password>mySecretPwd</password>
+                      <schemas>
+                          <schema>schema1</schema>
+                          <schema>schema2</schema>
+                          <schema>schema3</schema>
+                      </schemas>
+                      <placeholders>
+                          <keyABC>valueXYZ</keyABC>
+                          <otherplaceholder>value123</otherplaceholder>
+                      </placeholders>
+                  </configuration>
             </plugin>
         </plugins>
     </build>

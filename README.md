@@ -9,6 +9,9 @@ Configured Spring WebMvc Application.
 - Hibernate
 - JSP
 
+- FlywayDB
+- FailSafe
+
 
 ###Configuration
 Add your database credentials in `src/main/resources/application.properties` file.
