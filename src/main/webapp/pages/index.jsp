@@ -12,8 +12,11 @@
             <img src="https://spring.io/img/spring-platform-watermark-3a1b9ff25a20c68852696041d21275c0.png">
         <br>
 	<h1>Welcome in SpringApp 4!</h1>
-	<br><br><br>
+        <br><br>
+        <p>Running on: <b>${os}</b></p>
+	<br><br>
 	${message}
+        
         
 </body>
 </html>

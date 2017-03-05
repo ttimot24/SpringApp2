@@ -13,6 +13,7 @@ public class StartController {
     public String index(ModelMap model) {
         
         model.put("message", "This is a start up message!");
+        model.put("os",System.getProperty("os.name"));
          
       return "index";
     }
