@@ -2,7 +2,7 @@
 
 Configured Spring WebMvc Application.
 
-###Components
+### Components
 
 - SpringBoot
 - WebMVC
@@ -13,6 +13,6 @@ Configured Spring WebMvc Application.
 - FailSafe
 
 
-###Configuration
+### Configuration
 Add your database credentials in `src/main/resources/application.properties` file.
 
